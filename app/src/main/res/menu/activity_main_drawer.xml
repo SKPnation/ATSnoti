@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/pupils"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Pupils" />
+        <item
+            android:id="@+id/feedBacks"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Feedbacks" />
+        <item
+            android:id="@+id/status"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Status" />
+        <item
+            android:id="@+id/sign_out"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Sign out" />
+    </group>
+
+
+
+</menu>
