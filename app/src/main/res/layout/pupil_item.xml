@@ -75,20 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_below="@id/btn_notify"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <Button
-                android:id="@+id/btnDelete"
-                android:layout_weight="1"
-                android:text="DELETE"
-                android:textSize="13sp"
-                android:background="#fff"
-                android:gravity="center"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnDetails"
@@ -99,7 +86,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>

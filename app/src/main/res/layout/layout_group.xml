@@ -30,9 +30,10 @@
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_marginBottom="3dp"
             android:text="ADD"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"/>
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"/>
     </RelativeLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_list"

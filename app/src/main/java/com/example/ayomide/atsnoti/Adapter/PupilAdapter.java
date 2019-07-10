@@ -1,15 +1,17 @@
 package com.example.ayomide.atsnoti.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.ayomide.atsnoti.Interface.ItemClickListener;
+import com.example.ayomide.atsnoti.Common.Common;
 import com.example.ayomide.atsnoti.Model.PupilData;
 import com.example.ayomide.atsnoti.R;
 import com.squareup.picasso.Picasso;
@@ -41,12 +43,6 @@ public class PupilAdapter extends RecyclerView.Adapter<PupilAdapter.ViewHolder> 
         viewHolder.tvPupilName.setText( pupilDataList.get( i ).getName() );
         viewHolder.tvPupilGrade.setText( pupilDataList.get( i ).getGrade() );
 
-        viewHolder.profile_image.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //...
-            }
-        } );
     }
 
     @Override
@@ -58,14 +54,36 @@ public class PupilAdapter extends RecyclerView.Adapter<PupilAdapter.ViewHolder> 
 
         CircleImageView profile_image;
         TextView tvPupilName, tvPupilGrade;
-        Button btnDelete, btnDetails;
+        Button notify;
 
         public ViewHolder(@NonNull View itemView) {
             super( itemView );
 
             tvPupilName = itemView.findViewById(R.id.pupil_name);
-            tvPupilGrade = itemView.findViewById(R.id.pupil_grade);
+            tvPupilGrade = itemView.findViewById( R.id.pupil_grade );
             profile_image = itemView.findViewById( R.id.pupil_image );
+            notify = itemView.findViewById( R.id.btn_notify );
+
+            profile_image.setOnCreateContextMenuListener( new View.OnCreateContextMenuListener() {
+                @Override
+                public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                    contextMenu.setHeaderTitle( "Select the action" );
+
+                    contextMenu.add(0, 0, getAdapterPosition(), Common.EDIT);
+                    contextMenu.add(0, 1, getAdapterPosition(), Common.DELETE);
+                }
+            } );
+
+            notify.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showNotifyDialog();
+                }
+            } );
+        }
+
+        private void showNotifyDialog()
+        {
 
         }
     }
